@@ -1,8 +1,9 @@
 {
-  "name": "mega-moveis",
-  "version": "0.0.0",
+  "name": "portfolio-vittordeaguiar",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
+  "author": "vittoraguiar",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

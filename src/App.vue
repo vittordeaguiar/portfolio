@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <main class="w-screen flex flex-col xl:pb-0 absolute text-color">
+  <main class="w-screen flex flex-col xl:pb-0 absolute">
     <Header />
 
     <section class="flex flex-row flex-grow h-full">
@@ -42,9 +42,5 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-  }
-
-  .text-color {
-    color: #fcf7ff;
   }
 </style>
