@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <main class="w-screen min-h-screen flex flex-col xl:pb-0 absolute text-color">
+  <main class="w-screen flex flex-col xl:pb-0 absolute text-color">
     <Header />
 
     <section class="flex flex-row flex-grow h-full">
