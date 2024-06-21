@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="py-32 md:px-96 flex items-center justify-between">
+  <header class="py-20 md:px-96 flex items-center justify-between">
     <div class="flex items-center space-x-2">
       <!-- <h2>Know me</h2>
       <img class="invert-color" :src="ArrowRightIcon" alt="Go" /> -->
