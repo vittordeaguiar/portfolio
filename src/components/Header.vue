@@ -1,5 +1,6 @@
 <script setup lang="ts">
-  const menuItems = ['Home', 'Projects', 'About']
+  const menuItems = [{ text: 'Home', link: '/' }]
+  // const menuItems = ['Home', 'Projects', 'About']
 </script>
 
 <template>
@@ -9,13 +10,13 @@
       <p>Full Stack Developer</p>
     </section>
     <section class="flex items-center space-x-4">
-      <p
-        class="cursor-pointer transition-transform transform hover:scale-105 underline"
+      <a
         v-for="item in menuItems"
-        :key="item"
+        :href="item.link"
+        class="cursor-pointer transition-transform transform hover:scale-105 underline"
       >
-        {{ item }}
-      </p>
+        {{ item.text }}
+      </a>
     </section>
   </header>
 </template>

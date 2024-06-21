@@ -1,17 +1,18 @@
 <script setup lang="ts">
   import Header from './components/Header.vue'
   import Content from './components/Content.vue'
+  import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <main
-    class="flex w-screen flex-col div-body min-h-screen xl:pb-0 absolute text-color"
-  >
+  <main class="w-screen min-h-screen flex flex-col xl:pb-0 absolute text-color">
     <Header />
 
     <section class="flex flex-row flex-grow h-full">
       <Content />
     </section>
+
+    <Footer />
   </main>
 </template>
 
@@ -32,6 +33,12 @@
   }
 
   p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  a {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
