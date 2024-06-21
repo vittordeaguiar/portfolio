@@ -37,7 +37,7 @@
 </script>
 
 <template>
-  <header class="md:px-96 flex flex-col items-center space-y-8 w-full">
+  <header class="md:px-96 px-8 flex flex-col items-center space-y-8 w-full">
     <a
       v-for="item in menuItems"
       :key="item.text"
