@@ -7,7 +7,7 @@
   <header class="h-32 md:px-96 px-8 flex items-center justify-between">
     <section class="flex flex-col">
       <h1>Vittor de Aguiar</h1>
-      <p>Full Stack Developer</p>
+      <p>Software Engineer</p>
     </section>
     <section class="flex items-center space-x-4">
       <a
