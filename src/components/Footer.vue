@@ -9,7 +9,7 @@
       <img class="invert-color" :src="ArrowRightIcon" alt="Go" /> -->
     </div>
     <div>
-      <h3>© Vittor de Aguiar, 2024</h3>
+      <h3>© Vittor de Aguiar - 2024</h3>
     </div>
   </header>
 </template>
