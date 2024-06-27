@@ -6,6 +6,7 @@ Welcome to my personal portfolio project! This repository contains the initial s
 
 ## Technologies Used
 
+- **Nuxt.js**
 - **Vue.js**
 - **TypeScript**
 - **TailwindCSS**
