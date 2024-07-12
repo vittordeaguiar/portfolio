@@ -1,21 +1,25 @@
 <script setup lang="ts">
+import { scrollToSection } from '@/utils/scroll';
 const menuItems = [
-  { text: 'Home', link: '/' },
-  // { text: "About", link: "/about" },
+  { text: 'Início', link: 'banner' },
+  { text: 'Sobre', link: 'about' },
+  { text: 'Conexões', link: 'links' },
 ];
 </script>
 
 <template>
-  <header class="bg-lime py-6 md:px-60 px-8 flex items-center justify-between text-zinc-700">
+  <header
+    class="fixed top-0 left-0 w-full z-20 bg-purple py-2 md:px-60 px-8 flex items-center justify-between"
+  >
     <section class="flex flex-col">
-      <h1 class="text-xl font-semibold">Vittor de Aguiar</h1>
+      <h1 class="text-xl font-semibold text-handwrite">Vittor de Aguiar</h1>
       <h2 class="text-lg font-medium">Software Engineer</h2>
     </section>
-    <section class="flex items-center space-x-4">
+    <section class="flex items-center space-x-8">
       <a
         v-for="item in menuItems"
-        :href="item.link"
-        class="cursor-pointer transition-transform transform hover:scale-105 underline"
+        class="cursor-pointer transition-transform transform hover:scale-110"
+        @click.prevent="scrollToSection(item.link)"
       >
         {{ item.text }}
       </a>

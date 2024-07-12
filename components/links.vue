@@ -36,9 +36,7 @@ const menuItems = [
     id="links"
     class="bg-light-purple md:px-96 px-8 flex flex-col items-center justify-center space-y-8 w-full h-screen"
   >
-    <h2 class="text-lime text-handwrite text-center">
-      Conecte-se comigo!
-    </h2>
+    <h2 class="text-lime text-handwrite text-center" style="font-size: 36px">Conecte-se comigo!</h2>
     <a
       v-for="item in menuItems"
       :key="item.text"
@@ -48,20 +46,11 @@ const menuItems = [
       class="card w-full cursor-pointer px-20 py-4 flex items-center space-x-2"
     >
       <div class="w-8 h-8 mr-8">
-        <img
-          class="invert-color w-full h-full"
-          :src="item.icon"
-          alt="Ícone da rede social"
-        />
+        <img class="invert-color w-full h-full" :src="item.icon" alt="Ícone da rede social" />
       </div>
       <p class="flex-1">{{ item.text }}</p>
       <div class="w-8 h-8 ml-auto">
-        <Tippy
-          content="Go"
-          animation="perspective"
-          theme="light-border"
-          placement="right"
-        >
+        <Tippy content="Go" animation="perspective" theme="light-border" placement="right">
           <img
             class="invert-color w-full h-full"
             src="/icons/arrow-right-icon.svg"
@@ -70,12 +59,7 @@ const menuItems = [
         </Tippy>
       </div>
     </a>
-    <Tippy
-      content="Voltar ao topo"
-      animation="perspective"
-      theme="light-border"
-      placement="bottom"
-    >
+    <Tippy content="Voltar ao topo" animation="perspective" theme="light-border" placement="bottom">
       <ChevronDoubleUpIcon
         class="w-12 h-12 cursor-pointer animate-bounce text-lime"
         @click.prevent="scrollToSection('banner')"
