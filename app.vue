@@ -48,9 +48,7 @@ const lightGrayColor = ref('#f5f5f5');
   padding: 0 32px;
   background-color: v-bind(limeColor);
   color: v-bind(purpleColor);
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .btn-primary:hover {
@@ -64,48 +62,12 @@ const lightGrayColor = ref('#f5f5f5');
   padding: 2px 32px;
   background-color: v-bind(limeColor);
   color: v-bind(purpleColor);
-  transition:
-    background-color 0.4s ease,
-    color 0.4s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .btn-secundary:hover {
   background-color: transparent;
   color: v-bind(limeColor);
   border-color: v-bind(limeColor);
-}
-
-.input-field {
-  color: v-bind(purpleColor);
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 100%;
-  border: 1px solid v-bind(lightGrayColor);
-  border-radius: 1.25rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-}
-
-.input-field:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 3px v-bind(lightPurpleColor);
-}
-
-.textarea-field {
-  color: v-bind(purpleColor);
-  margin-top: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 100%;
-  border: 1px solid v-bind(lightGrayColor);
-  border-radius: 1.25rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease-in-out;
-}
-
-.textarea-field:focus {
-  outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 0 3px v-bind(lightPurpleColor);
 }
 </style>
