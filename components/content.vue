@@ -12,20 +12,20 @@ const menuItems = [
     icon: '/icons/linkedin-icon.svg',
   },
   {
-    text: 'My mind',
+    text: 'Twitter',
     link: 'https://twitter.com/vittordeaguiar',
     icon: '/icons/twitter-icon.svg',
   },
   {
-    text: 'My face',
+    text: 'Instagram',
     link: 'https://www.instagram.com/vittordeaguiar/',
     icon: '/icons/instagram-icon.svg',
   },
-  {
-    text: 'Twitch (occasionally)',
-    link: 'https://www.twitch.tv/vittordeaguiar',
-    icon: '/icons/twitch-icon.svg',
-  },
+  // {
+  //   text: 'Twitch (occasionally)',
+  //   link: 'https://www.twitch.tv/vittordeaguiar',
+  //   icon: '/icons/twitch-icon.svg',
+  // },
 ];
 </script>
 
