@@ -36,7 +36,9 @@ const menuItems = [
     id="links"
     class="bg-light-purple md:px-96 px-8 flex flex-col items-center justify-center space-y-8 w-full h-screen"
   >
-    <h2 class="text-lime text-handwrite text-center">Conecte-se comigo!</h2>
+    <h2 class="text-lime text-handwrite text-center">
+      Conecte-se comigo!
+    </h2>
     <a
       v-for="item in menuItems"
       :key="item.text"
