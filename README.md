@@ -22,5 +22,4 @@ The project is still in progress. At this stage, the website primarily functions
 - **Responsive Design**: Ensure the portfolio looks great on all devices.
 - **About Me**: Information about my background, skills, and interests.
 
-## Link to access:
-![Access](www.vittordeaguiar.com)
+## ![Access](www.vittordeaguiar.com)
