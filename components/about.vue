@@ -6,7 +6,7 @@ import { scrollToSection } from '@/utils/scroll';
 <template>
   <section
     id="about"
-    class="bg-light-gray md:px-32 md:py-48 px-8 py-16 flex flex-col items-center justify-between space-y-6 w-full min-h-screen"
+    class="bg-light-gray md:px-32 md:py-60 px-8 py-16 flex flex-col items-center justify-between space-y-6 w-full min-h-screen"
   >
     <section
       class="w-full flex md:flex-row flex-col justify-between items-center text-zinc-800 space-y-6 md:space-y-0"
