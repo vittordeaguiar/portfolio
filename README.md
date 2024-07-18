@@ -2,7 +2,7 @@
 
 ![Work in Progress](https://img.shields.io/badge/status-WIP-yellow)
 
-Welcome to my personal portfolio project! This repository contains the initial setup for my portfolio website. The goal of this project is to showcase my skills, projects, and experiences, but currently, it serves as a landing page redirecting to my main links.
+Welcome to my personal portfolio project! This repository contains the initial setup for my portfolio website.
 
 ## Technologies Used
 
