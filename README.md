@@ -11,10 +11,6 @@ Welcome to my personal portfolio project! This repository contains the initial s
 - ![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)
 - ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff)
 
-## Current Status
-
-The project is still in progress. At this stage, the website primarily functions as a redirect hub to my main links, such as my LinkedIn, GitHub, and other professional profiles.
-
 ## Planned Features
 
 - **Detailed Project Showcase**: Sections for each project, including descriptions, technologies used, and links to live demos and source code.
