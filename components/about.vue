@@ -37,7 +37,7 @@ const switchImage = () => {
           engenheiro de software
           <a
             class="font-semibold underline hover:text-electricBlue"
-            href="https://pypsystem.com"
+            href="https://pypsystem.com/"
             target="_blank"
           >
             Pyp System</a
