@@ -21,7 +21,7 @@ const switchImage = () => {
     >
       <div class="md:w-1/2 w-full flex justify-center">
         <img
-          class="h-40 w-40 md:h-80 md:w-80 object-cover rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 cursor-pointer jump-animation"
+          class="motion-reduce:animate-bounce h-40 w-40 md:h-80 md:w-80 object-cover rounded-full shadow-lg cursor-pointer"
           :src="image"
           alt="Imagem alternada"
           @click="switchImage"
@@ -61,13 +61,4 @@ const switchImage = () => {
   </section>
 </template>
 
-<style scoped>
-.jump-animation {
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.jump-animation:hover {
-  transform: scale(1.05) translateY(-10px);
-  opacity: 0.9;
-}
-</style>
+<style scoped></style>
