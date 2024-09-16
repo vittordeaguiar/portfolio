@@ -2,7 +2,7 @@
 
 <template>
   <main class="w-full min-h-screen flex flex-col xl:pb-0 absolute">
-    <Header />
+    <!-- <Header /> -->
     <article class="flex flex-grow h-full">
       <slot />
     </article>

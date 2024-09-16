@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', 'Lato', sans-serif;
 }
 
 html {
@@ -52,5 +53,23 @@ p {
 @media (prefers-color-scheme: dark) {
   .invert-color {
     filter: invert(1);
+  }
+}
+
+.grayscale-img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease; /* Adiciona uma transição suave para o efeito */
+}
+
+.grayscale-img:hover {
+  filter: grayscale(
+    0%
+  ); /* Remove o efeito de preto e branco ao passar o mouse */
+}
+
+/* Mantenha o efeito em preferências de esquema de cores escuras */
+@media (prefers-color-scheme: dark) {
+  .grayscale-img {
+    filter: grayscale(100%);
   }
 }

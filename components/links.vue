@@ -14,29 +14,39 @@ const menuItems = [
     icon: '/icons/linkedin-icon.svg',
   },
   {
-    text: 'Twitter',
-    link: 'https://twitter.com/vittordeaguiar',
-    icon: '/icons/twitter-icon.svg',
-  },
-  {
     text: 'Instagram',
     link: 'https://www.instagram.com/vittordeaguiar/',
     icon: '/icons/instagram-icon.svg',
   },
   {
-    text: 'Twitch',
-    link: 'https://www.twitch.tv/vittordeaguiar',
-    icon: '/icons/twitch-icon.svg',
+    text: 'Bluesky',
+    link: 'https://bsky.app/profile/vittor.dev',
+    icon: '/icons/bluesky-icon.png',
   },
+  {
+    text: 'Pyp System',
+    link: 'https://www.instagram.com/pypsystem/',
+    icon: '/icons/logo-pyp-system-white.svg',
+  },
+  // {
+  //   text: 'Twitter',
+  //   link: 'https://twitter.com/vittordeaguiar',
+  //   icon: '/icons/twitter-icon.svg',
+  // },
+  // {
+  //   text: 'Twitch',
+  //   link: 'https://www.twitch.tv/vittordeaguiar',
+  //   icon: '/icons/twitch-icon.svg',
+  // },
 ];
 </script>
 
 <template>
   <section
     id="links"
-    class="bg-light-purple md:px-96 px-8 flex flex-col items-center justify-center space-y-8 w-full h-screen"
+    class="bg-dark-gray md:px-96 px-8 flex flex-col items-center justify-center space-y-8 w-full pb-32"
   >
-    <h2 class="text-lime text-handwrite text-center" style="font-size: 36px">Conecte-se comigo!</h2>
+    <h2 class="text-center" style="font-size: 32px">Conecte-se comigo!</h2>
     <a
       v-for="item in menuItems"
       :key="item.text"
@@ -46,11 +56,25 @@ const menuItems = [
       class="card w-full cursor-pointer px-20 py-4 flex items-center space-x-2"
     >
       <div class="w-8 h-8 mr-8">
-        <img class="invert-color w-full h-full" :src="item.icon" alt="Ícone da rede social" />
+        <img
+          class="w-full h-full"
+          :class="
+            item.text !== 'Bluesky' && item.text !== 'Pyp System'
+              ? 'invert-color'
+              : ''
+          "
+          :src="item.icon"
+          alt="Ícone da rede social"
+        />
       </div>
       <p class="flex-1">{{ item.text }}</p>
       <div class="w-8 h-8 ml-auto">
-        <Tippy content="Go" animation="perspective" theme="light-border" placement="right">
+        <Tippy
+          content="Go"
+          animation="perspective"
+          theme="light-border"
+          placement="right"
+        >
           <img
             class="invert-color w-full h-full"
             src="/icons/arrow-right-icon.svg"
@@ -59,9 +83,14 @@ const menuItems = [
         </Tippy>
       </div>
     </a>
-    <Tippy content="Voltar ao topo" animation="perspective" theme="light-border" placement="bottom">
+    <Tippy
+      content="Voltar ao topo"
+      animation="perspective"
+      theme="light-border"
+      placement="bottom"
+    >
       <ChevronDoubleUpIcon
-        class="w-12 h-12 cursor-pointer animate-bounce text-lime"
+        class="w-12 h-12 cursor-pointer animate-bounce"
         @click.prevent="scrollToSection('banner')"
       />
     </Tippy>
