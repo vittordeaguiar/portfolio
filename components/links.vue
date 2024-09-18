@@ -19,6 +19,11 @@ const menuItems = [
     icon: '/icons/instagram-icon.svg',
   },
   {
+    text: 'Twitter',
+    link: 'https://twitter.com/vittordeaguiar',
+    icon: '/icons/twitter-icon.svg',
+  },
+  {
     text: 'Bluesky',
     link: 'https://bsky.app/profile/vittor.dev',
     icon: '/icons/bluesky-icon.png',
@@ -27,11 +32,6 @@ const menuItems = [
     text: 'Pyp System',
     link: 'https://www.instagram.com/pypsystem/',
     icon: '/icons/logo-pyp-system-white.svg',
-  },
-  {
-    text: 'Twitter',
-    link: 'https://twitter.com/vittordeaguiar',
-    icon: '/icons/twitter-icon.svg',
   },
   // {
   //   text: 'Twitch',
