@@ -28,11 +28,11 @@ const menuItems = [
     link: 'https://www.instagram.com/pypsystem/',
     icon: '/icons/logo-pyp-system-white.svg',
   },
-  // {
-  //   text: 'Twitter',
-  //   link: 'https://twitter.com/vittordeaguiar',
-  //   icon: '/icons/twitter-icon.svg',
-  // },
+  {
+    text: 'Twitter',
+    link: 'https://twitter.com/vittordeaguiar',
+    icon: '/icons/twitter-icon.svg',
+  },
   // {
   //   text: 'Twitch',
   //   link: 'https://www.twitch.tv/vittordeaguiar',
