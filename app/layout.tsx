@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full flex justify-center py-2`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full flex justify-center py-8`}
       >
         <div className="flex-1 flex flex-col max-w-xl">
           <Header />
