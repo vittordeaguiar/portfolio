@@ -22,7 +22,7 @@ export default function Links() {
 
       <Link
         className="border-2 border-white rounded-sm flex items-center p-4"
-        href={"https://twitter.com/vittordeaguiar"}
+        href={"https://www.linkedin.com/in/vittordeaguiar/"}
         target="_blank"
       >
         <div className="w-10">
