@@ -8,14 +8,14 @@ export default function Header() {
           Vittor de Aguiar
         </span>
         <span className="font-medium text-base text-zinc-400">
-          Full Stack Developer
+          Desenvolvedor Full Stack
         </span>
       </div>
 
       <div>
         <Link href={"/about"}>
           <span className="text-base text-zinc-400 cursor-pointer hover:text-zinc-200">
-            /about
+            /sobre
           </span>
         </Link>
       </div>
