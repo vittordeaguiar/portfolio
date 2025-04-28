@@ -14,7 +14,7 @@ export default function Header() {
 
       <div>
         <Link href={"/about"}>
-          <span className="text-base text-zinc-400 cursor-pointer hover:text-zinc-600">
+          <span className="text-base text-zinc-400 cursor-pointer hover:text-zinc-100">
             /about
           </span>
         </Link>
