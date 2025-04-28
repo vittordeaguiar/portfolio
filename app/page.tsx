@@ -1,3 +1,9 @@
+import Links from "@/components/Links";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <Links />
+    </main>
+  );
 }
