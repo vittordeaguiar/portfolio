@@ -20,9 +20,9 @@
         <li>
           <a href="#contact" class="nav__link" @click="closeMobileMenu"> <span>04.</span>Contato </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#" class="btn btn--primary">Baixar CV</a>
-        </li>
+        </li>  -->
         <li>
           <button class="theme-toggle" @click="handleToggleTheme" aria-label="Alternar Tema">
             <i :class="themeIcon"></i>
