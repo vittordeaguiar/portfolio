@@ -1,0 +1,1426 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vittor de Aguiar | Desenvolvedor Full Stack</title>
+    <meta
+      name="description"
+      content="Portfolio de Vittor de Aguiar, Desenvolvedor Full Stack especialista em sistemas corporativos, ERPs e IA."
+    />
+
+    <!-- Fonts: Inter (Sans) & Fira Code (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+      /* * ==========================================
+         * CSS VARIABLES & THEME CONFIGURATION
+         * ==========================================
+         */
+      :root {
+        /* Navy + Cyan Palette (Dark Mode Default) */
+        --color-background: #0a192f;
+        --color-surface: #112240;
+        --color-surface-light: #1d3461;
+        --color-primary: #64ffda;
+        --color-primary-hover: #4cd6b8;
+        --color-text-primary: #ccd6f6;
+        --color-text-secondary: #8892b0;
+        --color-text-heading: #e6f1ff;
+        --color-border: #233554;
+
+        /* Light Mode Overrides */
+        --color-light-background: #f8fafc;
+        --color-light-surface: #ffffff;
+        --color-light-surface-light: #e2e8f0;
+        --color-light-primary: #0a192f; /* Dark Navy as primary in light mode for contrast */
+        --color-light-primary-hover: #112240;
+        --color-light-text-primary: #0a192f;
+        --color-light-text-secondary: #475569;
+        --color-light-text-heading: #0f172a;
+        --color-light-border: #cbd5e1;
+
+        /* Spacing Scale */
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-2xl: 5rem;
+        --spacing-3xl: 7rem;
+
+        /* Typography */
+        --font-primary: "Inter", "SF Pro Display", sans-serif;
+        --font-mono: "Fira Code", "SF Mono", "Consolas", monospace;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 2rem;
+        --font-size-4xl: 2.5rem;
+        --font-size-5xl: 3.5rem;
+
+        /* Effects */
+        --border-radius-sm: 4px;
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+        --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+        --shadow-glow: 0 0 20px rgba(100, 255, 218, 0.15);
+
+        /* Header Height */
+        --header-height: 80px;
+      }
+
+      /* Light Mode Application */
+      [data-theme="light"] {
+        --color-background: var(--color-light-background);
+        --color-surface: var(--color-light-surface);
+        --color-surface-light: var(--color-light-surface-light);
+        --color-primary: var(--color-light-primary);
+        --color-primary-hover: var(--color-light-primary-hover);
+        --color-text-primary: var(--color-light-text-primary);
+        --color-text-secondary: var(--color-light-text-secondary);
+        --color-text-heading: var(--color-light-text-heading);
+        --color-border: var(--color-light-border);
+        --shadow-glow: 0 0 20px rgba(10, 25, 47, 0.1);
+      }
+
+      /* * ==========================================
+         * RESET & BASE STYLES
+         * ==========================================
+         */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        background-color: var(--color-background);
+        color: var(--color-text-primary);
+        line-height: 1.6;
+        font-size: var(--font-size-base);
+        transition:
+          background-color var(--transition-normal),
+          color var(--transition-normal);
+        overflow-x: hidden;
+        background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+        background-size: 40px 40px; /* Subtle dot grid */
+      }
+
+      /* Headings */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--color-text-heading);
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      h1 {
+        font-size: var(--font-size-5xl);
+      }
+      h2 {
+        font-size: var(--font-size-3xl);
+      }
+      h3 {
+        font-size: var(--font-size-xl);
+      }
+
+      /* Links */
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: color var(--transition-fast);
+        cursor: pointer;
+      }
+
+      /* Mono Text */
+      .mono {
+        font-family: var(--font-mono);
+      }
+
+      /* Text Colors */
+      .text-primary {
+        color: var(--color-primary);
+      }
+      .text-secondary {
+        color: var(--color-text-secondary);
+      }
+      .text-heading {
+        color: var(--color-text-heading);
+      }
+
+      /* * ==========================================
+         * UTILITIES
+         * ==========================================
+         */
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+      }
+
+      .section {
+        padding: var(--spacing-3xl) 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .section__header {
+        margin-bottom: var(--spacing-xl);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+      }
+
+      .section__number {
+        font-family: var(--font-mono);
+        color: var(--color-primary);
+        font-size: var(--font-size-xl);
+        font-weight: 400;
+      }
+
+      .section__title {
+        font-size: var(--font-size-2xl);
+        color: var(--color-text-heading);
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+
+      .section__title::after {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 1px;
+        background-color: var(--color-border);
+        margin-left: var(--spacing-md);
+      }
+
+      /* * ==========================================
+         * BUTTONS
+         * ==========================================
+         */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        border-radius: var(--border-radius-sm);
+        transition: all var(--transition-fast);
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .btn--primary {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background: transparent;
+      }
+
+      .btn--primary:hover {
+        background-color: rgba(100, 255, 218, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn--text {
+        color: var(--color-text-heading);
+        padding: 0.75rem 0;
+        border: none;
+        background: none;
+        position: relative;
+      }
+
+      .btn--text::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 5px;
+        left: 0;
+        background-color: var(--color-primary);
+        transition: width var(--transition-normal);
+      }
+
+      .btn--text:hover::after {
+        width: 100%;
+      }
+
+      .btn--text:hover {
+        color: var(--color-primary);
+      }
+
+      /* * ==========================================
+         * COMPONENTS
+         * ==========================================
+         */
+
+      /* --- Header --- */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        background-color: rgba(10, 25, 47, 0.85);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: all var(--transition-normal);
+        border-bottom: 1px solid transparent;
+      }
+
+      [data-theme="light"] .header {
+        background-color: rgba(248, 250, 252, 0.85);
+      }
+
+      .header--scrolled {
+        height: 70px;
+        box-shadow: var(--shadow-sm);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .header__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .header__logo {
+        font-family: var(--font-mono);
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        z-index: 1002;
+      }
+
+      .nav__list {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-lg);
+        list-style: none;
+      }
+
+      .nav__link {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-primary);
+      }
+
+      .nav__link span {
+        color: var(--color-primary);
+        margin-right: 4px;
+      }
+
+      .nav__link:hover {
+        color: var(--color-primary);
+      }
+
+      .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--color-text-primary);
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: color var(--transition-fast);
+        margin-left: var(--spacing-sm);
+      }
+
+      .theme-toggle:hover {
+        color: var(--color-primary);
+      }
+
+      .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--color-primary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1002;
+      }
+
+      /* --- Hero --- */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: var(--header-height);
+      }
+
+      .hero__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 900px;
+        width: 100%;
+      }
+
+      /* Terminal Window */
+      .terminal {
+        background-color: var(--color-surface);
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--color-border);
+        overflow: hidden;
+        margin-bottom: var(--spacing-xl);
+      }
+
+      .terminal__header {
+        background-color: var(--color-surface-light);
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .terminal__controls {
+        display: flex;
+        gap: 8px;
+        margin-right: var(--spacing-md);
+      }
+
+      .control {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .control--red {
+        background-color: #ff5f56;
+      }
+      .control--yellow {
+        background-color: #ffbd2e;
+      }
+      .control--green {
+        background-color: #27c93f;
+      }
+
+      .terminal__title {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        color: var(--color-text-secondary);
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .terminal__body {
+        padding: var(--spacing-lg);
+        font-family: var(--font-mono);
+        color: var(--color-text-primary);
+        min-height: 250px;
+      }
+
+      .command-line {
+        display: flex;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .prompt {
+        color: var(--color-primary);
+        margin-right: 10px;
+        flex-shrink: 0;
+      }
+
+      .output {
+        color: var(--color-text-heading);
+        margin-bottom: var(--spacing-md);
+        white-space: pre-wrap;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background-color: var(--color-primary);
+        animation: blink 1s step-end infinite;
+        vertical-align: middle;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero__actions {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+      }
+
+      .availability {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #27c93f;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7);
+        animation: pulse-green 2s infinite;
+      }
+
+      @keyframes pulse-green {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 6px rgba(39, 201, 63, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+        }
+      }
+
+      /* --- About --- */
+      .about__grid {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: var(--spacing-2xl);
+        align-items: start;
+      }
+
+      .about__text p {
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-secondary);
+      }
+
+      .highlight {
+        color: var(--color-primary);
+      }
+
+      .about__stats {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+
+      .stat-card {
+        background-color: var(--color-surface);
+        padding: var(--spacing-md);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-md);
+        transition: all var(--transition-normal);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-primary);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .stat__value {
+        font-size: var(--font-size-3xl);
+        font-weight: 700;
+        color: var(--color-text-heading);
+        display: block;
+      }
+
+      .stat__label {
+        font-family: var(--font-mono);
+        color: var(--color-primary);
+        font-size: var(--font-size-sm);
+      }
+
+      .stat__sub {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-secondary);
+      }
+
+      /* --- Skills --- */
+      .skills__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+      }
+
+      .code-card {
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-md);
+        padding: var(--spacing-md);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        transition: all var(--transition-normal);
+      }
+
+      .code-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-glow);
+        border-color: var(--color-primary);
+      }
+
+      .code-card__header {
+        color: var(--color-text-heading);
+        margin-bottom: var(--spacing-sm);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .code-block {
+        color: var(--color-text-secondary);
+        line-height: 1.5;
+      }
+
+      .code-var {
+        color: #c792ea;
+      } /* Purple-ish */
+      .code-string {
+        color: #98c379;
+      } /* Green-ish */
+      .code-bracket {
+        color: #e06c75;
+      } /* Red-ish */
+
+      /* --- Experience --- */
+      .timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--color-primary), var(--color-surface-light));
+      }
+
+      .timeline__item {
+        margin-bottom: var(--spacing-xl);
+        padding-left: var(--spacing-xl);
+        position: relative;
+      }
+
+      .timeline__item::before {
+        content: "";
+        position: absolute;
+        left: -6px;
+        top: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: var(--color-background);
+        border: 2px solid var(--color-primary);
+      }
+
+      .timeline__period {
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-xs);
+        display: inline-block;
+      }
+
+      .timeline__title {
+        color: var(--color-text-heading);
+        font-size: var(--font-size-xl);
+        margin-bottom: 2px;
+      }
+
+      .timeline__subtitle {
+        color: var(--color-text-primary);
+        font-weight: 500;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .timeline__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: var(--spacing-sm);
+      }
+
+      .tech-pill {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--color-primary);
+        background-color: rgba(100, 255, 218, 0.1);
+        padding: 4px 10px;
+        border-radius: var(--border-radius-full);
+      }
+
+      /* --- Results --- */
+      .results__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+      }
+
+      .result-card {
+        background-color: var(--color-surface);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius-md);
+        border: 1px solid var(--color-border);
+        text-align: center;
+        transition: transform var(--transition-normal);
+      }
+
+      .result-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary);
+      }
+
+      .result-icon {
+        font-size: 2rem;
+        color: var(--color-primary);
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .result-metric {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--color-text-heading);
+        margin-bottom: var(--spacing-xs);
+      }
+
+      /* --- Services --- */
+      .services__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+      }
+
+      .service-card {
+        background-color: var(--color-surface);
+        padding: var(--spacing-lg);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius-md);
+        transition: all var(--transition-normal);
+      }
+
+      .service-card:hover {
+        background-color: var(--color-surface-light);
+        transform: translateY(-5px);
+      }
+
+      .service-header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+      }
+
+      .service-icon {
+        color: var(--color-primary);
+        font-size: 1.5rem;
+      }
+
+      .service-card h3 {
+        margin: 0;
+        font-size: var(--font-size-lg);
+      }
+
+      /* --- Contact --- */
+      .contact__content {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact__subtitle {
+        font-size: var(--font-size-2xl);
+        color: var(--color-text-heading);
+        margin-bottom: var(--spacing-md);
+      }
+
+      .email-link {
+        font-size: var(--font-size-2xl);
+        font-weight: 700;
+        color: var(--color-primary);
+        position: relative;
+        display: inline-block;
+        margin: var(--spacing-lg) 0;
+      }
+
+      .email-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--color-primary);
+        transition: width var(--transition-normal);
+      }
+
+      .email-link:hover::after {
+        width: 100%;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-md);
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--color-text-secondary);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+      }
+
+      .social-link:hover {
+        color: var(--color-primary);
+      }
+
+      .social-link i {
+        font-size: 1.2rem;
+      }
+
+      /* --- Footer --- */
+      .footer {
+        padding: var(--spacing-lg) 0;
+        text-align: center;
+        color: var(--color-text-secondary);
+        font-family: var(--font-mono);
+        font-size: var(--font-size-sm);
+      }
+
+      .footer p {
+        margin-bottom: 8px;
+      }
+
+      /* * ==========================================
+         * RESPONSIVE DESIGN
+         * ==========================================
+         */
+      @media (max-width: 1024px) {
+        .about__grid {
+          grid-template-columns: 1fr;
+        }
+        .results__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --header-height: 70px;
+          --spacing-3xl: 4rem;
+          --font-size-5xl: 2.5rem;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .nav__list {
+          position: fixed;
+          top: 0;
+          right: 0;
+          height: 100vh;
+          width: 75vw;
+          background-color: var(--color-surface);
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transform: translateX(100%);
+          transition: transform var(--transition-normal);
+          box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+          z-index: 1001;
+        }
+
+        .nav__list.active {
+          transform: translateX(0);
+        }
+
+        .results__grid,
+        .services__grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero__title {
+          font-size: 2rem;
+        }
+
+        .timeline::before {
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Component: Header -->
+    <header class="header" id="header">
+      <div class="container header__container">
+        <a href="#" class="header__logo">&lt;VA /&gt;</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu Mobile">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav__list" id="nav-list">
+          <li>
+            <a href="#about" class="nav__link"><span>01.</span>Sobre</a>
+          </li>
+          <li>
+            <a href="#skills" class="nav__link"><span>02.</span>Competências</a>
+          </li>
+          <li>
+            <a href="#experience" class="nav__link"><span>03.</span>Experiência</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav__link"><span>04.</span>Contato</a>
+          </li>
+          <li>
+            <a href="#" class="btn btn--primary">Baixar CV</a>
+          </li>
+          <li>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Alternar Tema">
+              <i class="fas fa-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- Component: Hero -->
+      <section class="hero" id="hero">
+        <div class="container hero__container">
+          <div class="terminal">
+            <div class="terminal__header">
+              <div class="terminal__controls">
+                <div class="control control--red"></div>
+                <div class="control control--yellow"></div>
+                <div class="control control--green"></div>
+              </div>
+              <div class="terminal__title">vittor@portfolio: ~</div>
+            </div>
+            <div class="terminal__body">
+              <div class="command-line">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <span class="typing-text" id="typing-line-1">whoami</span>
+              </div>
+              <div class="output hidden" id="output-1">> Vittor de Aguiar > Desenvolvedor Full Stack</div>
+
+              <div class="command-line hidden" id="cmd-2">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <span class="typing-text" id="typing-line-2">cat about.txt</span>
+              </div>
+              <div class="output hidden" id="output-2">
+                Especialista em sistemas corporativos, ERPs, CRMs e integrações com Inteligência Artificial.
+                Transformando ideias em soluções digitais que geram impacto real.
+              </div>
+
+              <div class="command-line hidden" id="cmd-final">
+                <span class="prompt">visitor@portfolio:~$</span>
+                <span class="cursor"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__actions">
+            <a href="#experience" class="btn btn--primary">Ver meu trabalho →</a>
+            <a href="#contact" class="btn btn--text">Entrar em contato</a>
+          </div>
+
+          <div class="availability">
+            <div class="status-dot"></div>
+            // Disponível para novos projetos
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: About -->
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">01.</span>
+            <h2 class="section__title">Sobre Mim</h2>
+          </div>
+
+          <div class="about__grid">
+            <div class="about__text">
+              <p>
+                Sou um <span class="highlight">Desenvolvedor Full Stack</span> com mais de 3 anos de experiência
+                construindo sistemas de gestão empresarial e soluções corporativas de grande escala.
+              </p>
+
+              <p>
+                Minha trajetória inclui o desenvolvimento de ERPs utilizados por prefeituras,
+                <span class="highlight">liderança técnica</span> de equipes de desenvolvimento, e criação de soluções
+                com <span class="highlight">Inteligência Artificial</span> para automação de processos comerciais.
+              </p>
+
+              <p>
+                O que me diferencia é a combinação de expertise técnica com visão estratégica de negócio. Não apenas
+                escrevo código — entendo o problema, projeto a solução arquitetural e entrego
+                <span class="highlight">resultados mensuráveis</span>.
+              </p>
+
+              <p>
+                Atualmente atuo como freelancer e consultor, ajudando empresas a otimizar processos e escalar operações
+                através de tecnologia bem aplicada.
+              </p>
+            </div>
+
+            <div class="about__stats">
+              <div class="stat-card">
+                <span class="stat__value">+3</span>
+                <span class="stat__label">anos de experiência</span>
+                <span class="stat__sub">Em desenvolvimento de software</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat__value">Tech Lead</span>
+                <span class="stat__label">Liderança de equipes</span>
+                <span class="stat__sub">Gestão técnica & Mentoria</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat__value">End-to-End</span>
+                <span class="stat__label">Do requisito à deploy</span>
+                <span class="stat__sub">Visão completa do ciclo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Skills -->
+      <section class="section skills" id="skills">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">02.</span>
+            <h2 class="section__title">Competências Técnicas</h2>
+          </div>
+
+          <div class="skills__grid">
+            <!-- Backend -->
+            <div class="code-card">
+              <div class="code-card__header">Backend.js</div>
+              <div class="code-block">
+                <span class="code-var">const</span> backend = <span class="code-bracket">[</span><br />
+                &nbsp;&nbsp;<span class="code-string">"Node.js (Nest.js)"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"NET Core / C#"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"TypeScript"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"REST APIs"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Microsserviços"</span><br />
+                <span class="code-bracket">]</span>;
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="code-card">
+              <div class="code-card__header">Frontend.js</div>
+              <div class="code-block">
+                <span class="code-var">const</span> frontend = <span class="code-bracket">[</span><br />
+                &nbsp;&nbsp;<span class="code-string">"Vue.js (Nuxt.js)"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"JavaScript ES6+"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Flutter"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"HTML5 / CSS3"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Tailwind CSS"</span><br />
+                <span class="code-bracket">]</span>;
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div class="code-card">
+              <div class="code-card__header">Database.sql</div>
+              <div class="code-block">
+                <span class="code-var">const</span> databases = <span class="code-bracket">[</span><br />
+                &nbsp;&nbsp;<span class="code-string">"PostgreSQL"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"MySQL"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Sybase"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Redis"</span><br />
+                <span class="code-bracket">]</span>;
+              </div>
+            </div>
+
+            <!-- DevOps -->
+            <div class="code-card">
+              <div class="code-card__header">DevOps.yml</div>
+              <div class="code-block">
+                <span class="code-var">const</span> devops = <span class="code-bracket">[</span><br />
+                &nbsp;&nbsp;<span class="code-string">"Docker"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"CI/CD Pipelines"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"AWS"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Git / GitHub"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Linux"</span><br />
+                <span class="code-bracket">]</span>;
+              </div>
+            </div>
+
+            <!-- Expertise -->
+            <div class="code-card">
+              <div class="code-card__header">Expertise.json</div>
+              <div class="code-block">
+                <span class="code-var">const</span> areas = <span class="code-bracket">[</span><br />
+                &nbsp;&nbsp;<span class="code-string">"Sistemas ERP"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Plataformas CRM"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"IA / NLP"</span>,<br />
+                &nbsp;&nbsp;<span class="code-string">"Sistemas Legados"</span><br />
+                <span class="code-bracket">]</span>;
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Experience -->
+      <section class="section experience" id="experience">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">03.</span>
+            <h2 class="section__title">Experiência Profissional</h2>
+          </div>
+
+          <div class="timeline">
+            <!-- Entry 1 -->
+            <div class="timeline__item">
+              <span class="timeline__period">2025 — Presente</span>
+              <h3 class="timeline__title">Freelancer & Consultor</h3>
+              <p class="timeline__subtitle">Desenvolvedor Full Stack</p>
+              <p>
+                Desenvolvimento e consultoria em TI para empresas da região, combinando expertise técnica com visão de
+                negócio. Entrega de soluções personalizadas que otimizam processos, reduzem custos operacionais e geram
+                impacto mensurável nos resultados dos clientes.
+              </p>
+              <div class="timeline__tags">
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">.NET Core</span>
+                <span class="tech-pill">Vue.js</span>
+                <span class="tech-pill">PostgreSQL</span>
+              </div>
+            </div>
+
+            <!-- Entry 2 -->
+            <div class="timeline__item">
+              <span class="timeline__period">2024 — 2025</span>
+              <h3 class="timeline__title">Pyp System</h3>
+              <p class="timeline__subtitle">Co-fundador & Tech Lead</p>
+              <p>
+                Co-fundador e líder técnico de software house focada em soluções corporativas. Desenvolvimento de
+                solução completa baseada em IA para automação de vendas e comunicação com clientes, utilizando
+                processamento de linguagem natural para otimização de processos comerciais.
+              </p>
+              <div class="timeline__tags">
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">IA/NLP</span>
+                <span class="tech-pill">Arquitetura</span>
+              </div>
+            </div>
+
+            <!-- Entry 3 -->
+            <div class="timeline__item">
+              <span class="timeline__period">2023 — 2024</span>
+              <h3 class="timeline__title">Growth 8</h3>
+              <p class="timeline__subtitle">Desenvolvedor Full Stack & Tech Lead</p>
+              <p>
+                Desenvolvimento de APIs robustas e interfaces modernas, com integração de IA em projetos internos.
+                Liderança de equipe com 3 desenvolvedores e 1 designer, incluindo definição técnica, code review,
+                mentoria e implementação de práticas DevOps.
+              </p>
+              <div class="timeline__tags">
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Vue.js</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">CI/CD</span>
+              </div>
+            </div>
+
+            <!-- Entry 4 -->
+            <div class="timeline__item">
+              <span class="timeline__period">2022 — 2023</span>
+              <h3 class="timeline__title">Abase Sistemas e Soluções</h3>
+              <p class="timeline__subtitle">Desenvolvedor Web</p>
+              <p>
+                Desenvolvimento e evolução do ERP Gespam, sistema completo de gestão pública utilizado por prefeituras
+                do Rio Grande do Sul. Entrega de novas funcionalidades e módulos completos em sistema corporativo de
+                larga escala com milhares de usuários.
+              </p>
+              <div class="timeline__tags">
+                <span class="tech-pill">.NET Core</span>
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Sybase</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Results -->
+      <section class="section results">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">04.</span>
+            <h2 class="section__title">Resultados Entregues</h2>
+          </div>
+
+          <div class="results__grid">
+            <div class="result-card">
+              <div class="result-icon"><i class="fas fa-chart-line"></i></div>
+              <span class="result-metric">40%</span>
+              <p>Redução no tempo de atendimento via automação com IA</p>
+            </div>
+            <div class="result-card">
+              <div class="result-icon"><i class="fas fa-users"></i></div>
+              <span class="result-metric">Múltiplas</span>
+              <p>Prefeituras utilizando ERP desenvolvido</p>
+            </div>
+            <div class="result-card">
+              <div class="result-icon"><i class="fas fa-code"></i></div>
+              <span class="result-metric">3 Devs</span>
+              <p>Liderança de equipe técnica e mentoria</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Education -->
+      <section class="section education">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">05.</span>
+            <h2 class="section__title">Formação</h2>
+          </div>
+
+          <div class="skills__grid">
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-graduation-cap service-icon"></i>
+                <h3>Ciência da Computação</h3>
+              </div>
+              <p>Bacharelado (2022 — Em andamento)<br />URI — Campus Santo Ângelo</p>
+            </div>
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-certificate service-icon"></i>
+                <h3>Técnico em Informática</h3>
+              </div>
+              <p>Manutenção e Suporte (2019 — 2021)<br />Instituto Federal Farroupilha</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Services -->
+      <section class="section services">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">06.</span>
+            <h2 class="section__title">Como Posso Ajudar</h2>
+          </div>
+
+          <div class="services__grid">
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-layer-group service-icon"></i>
+                <h3>Desenvolvimento de Sistemas</h3>
+              </div>
+              <p>ERPs, CRMs e sistemas de gestão customizados para as necessidades específicas do seu negócio.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-brain service-icon"></i>
+                <h3>Integrações com IA</h3>
+              </div>
+              <p>Automação de processos e otimização comercial utilizando inteligência artificial e NLP.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-code-branch service-icon"></i>
+                <h3>Consultoria Técnica</h3>
+              </div>
+              <p>Arquitetura de soluções, code review e mentoria para equipes de desenvolvimento.</p>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <i class="fas fa-rocket service-icon"></i>
+                <h3>Liderança de Projetos</h3>
+              </div>
+              <p>Gestão técnica de projetos do requisito à entrega, com foco em resultados mensuráveis.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Component: Contact -->
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="section__header">
+            <span class="section__number">07.</span>
+            <h2 class="section__title">Vamos Conversar?</h2>
+          </div>
+
+          <div class="contact__content">
+            <h3 class="contact__subtitle">Tem um projeto em mente?</h3>
+            <p>
+              Vamos transformar sua ideia em realidade. Estou sempre aberto a discutir novos projetos e oportunidades de
+              consultoria.
+            </p>
+
+            <a href="mailto:vittoraguiar93@gmail.com" class="email-link"> vittoraguiar93@gmail.com </a>
+
+            <p>ou me encontre em</p>
+
+            <div class="social-links">
+              <a href="https://linkedin.com/in/vittordeaguiar" class="social-link" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/vittordeaguiar" class="social-link" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://wa.me/55984690385" class="social-link" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Component: Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Desenvolvido com 💙 por Vittor de Aguiar</p>
+        <p style="font-size: 0.8rem; opacity: 0.7">Feito com Nuxt.js V4.2.1</p>
+        <p>© 2025</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Logic: Theme Toggle ---
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = themeToggle.querySelector("i");
+        const html = document.documentElement;
+
+        themeToggle.addEventListener("click", () => {
+          const currentTheme = html.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          html.setAttribute("data-theme", newTheme);
+
+          themeIcon.className = newTheme === "light" ? "fas fa-moon" : "fas fa-sun";
+        });
+
+        // --- Logic: Mobile Menu ---
+        const hamburger = document.getElementById("hamburger");
+        const navList = document.getElementById("nav-list");
+        const navLinks = document.querySelectorAll(".nav__link");
+
+        hamburger.addEventListener("click", () => {
+          navList.classList.toggle("active");
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            navList.classList.remove("active");
+          });
+        });
+
+        // --- Logic: Header Scroll ---
+        const header = document.getElementById("header");
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            header.classList.add("header--scrolled");
+          } else {
+            header.classList.remove("header--scrolled");
+          }
+        });
+
+        // --- Logic: Scroll Animation (Fade In Up) ---
+        const sections = document.querySelectorAll(".section");
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        // --- Logic: Terminal Typing Effect ---
+        // Simple sequence to mimic the terminal feel
+        const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+        const runTerminal = async () => {
+          await delay(800);
+          // "whoami" finished (simulated via CSS/static text for simplicity, now revealing output)
+          document.getElementById("output-1").classList.remove("hidden");
+
+          await delay(1000);
+          document.getElementById("cmd-2").classList.remove("hidden");
+
+          await delay(1000); // Simulate typing time
+          document.getElementById("output-2").classList.remove("hidden");
+
+          await delay(800);
+          document.getElementById("cmd-final").classList.remove("hidden");
+        };
+
+        runTerminal();
+      });
+    </script>
+  </body>
+</html>
