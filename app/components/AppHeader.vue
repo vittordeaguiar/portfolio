@@ -1,10 +1,10 @@
 <template>
-  <header :class="['header', { 'header--scrolled': isScrolled }]" id="header">
+  <header id="header" :class="['header', { 'header--scrolled': isScrolled }]">
     <div class="container header__container">
       <a href="#" class="header__logo">&lt;VA /&gt;</a>
 
-      <button class="hamburger" @click="toggleMobileMenu" aria-label="Menu Mobile">
-        <i class="fas fa-bars"></i>
+      <button class="hamburger" aria-label="Menu Mobile" @click="toggleMobileMenu">
+        <i class="fas fa-bars"/>
       </button>
 
       <ul :class="['nav__list', { active: isMobileMenuOpen }]">
@@ -22,10 +22,10 @@
         </li>
         <!-- <li>
           <a href="#" class="btn btn--primary">Baixar CV</a>
-        </li>  -->
+        </li> -->
         <li>
-          <button class="theme-toggle" @click="handleToggleTheme" aria-label="Alternar Tema">
-            <i :class="themeIcon"></i>
+          <button class="theme-toggle" aria-label="Alternar Tema" @click="handleToggleTheme">
+            <i :class="themeIcon"/>
           </button>
         </li>
       </ul>
@@ -35,8 +35,8 @@
 
 <script setup lang="ts">
 const { theme, toggleTheme } = useTheme();
-const isScrolled = ref(false);
-const isMobileMenuOpen = ref(false);
+const isScrolled = ref<boolean>(false);
+const isMobileMenuOpen = ref<boolean>(false);
 
 const themeIcon = computed(() => {
   return theme.value === "light" ? "fas fa-moon" : "fas fa-sun";
