@@ -15,14 +15,14 @@
             <span class="prompt">visitor@portfolio:~$</span>
             <span class="typing-text">{{ typedCommand1 }}</span>
           </div>
-          <div :class="['output', { hidden: !showOutput1 }]">> Vittor de Aguiar > Desenvolvedor Full Stack</div>
+          <div :class="['output', { hidden: !showOutput1 }]">> Vittor de Aguiar > Desenvolvedor Back-end</div>
 
           <div :class="['command-line', { hidden: !showCmd2 }]">
             <span class="prompt">visitor@portfolio:~$</span>
             <span class="typing-text">{{ typedCommand2 }}</span>
           </div>
           <div :class="['output', { hidden: !showOutput2 }]">
-            Especialista em sistemas corporativos, ERPs, CRMs e integrações entre sistemas e APIs. Transformando ideias
+            Desenvolvedor Back-end focado em soluções como ERPs, CRMs e integrações entre sistemas e APIs. Transformando ideias
             em soluções digitais que geram impacto real.
           </div>
 
