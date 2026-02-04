@@ -1,100 +1,52 @@
 <template>
   <section id="hero" class="hero">
     <div class="container hero__container">
-      <div class="terminal">
-        <div class="terminal__header">
-          <div class="terminal__controls">
-            <div class="control control--red" />
-            <div class="control control--yellow" />
-            <div class="control control--green" />
-          </div>
-          <div class="terminal__title">vittor@portfolio: ~</div>
-        </div>
-        <div class="terminal__body">
-          <div :class="['command-line', { hidden: !showCmd1 }]">
-            <span class="prompt">visitor@portfolio:~$</span>
-            <span class="typing-text">{{ typedCommand1 }}</span>
-          </div>
-          <div :class="['output', { hidden: !showOutput1 }]">> Vittor de Aguiar > Desenvolvedor Back-end</div>
+      <div class="hero__content">
+        <p class="hero__eyebrow mono">Olá, eu sou</p>
+        <h1 class="hero__title">Vittor de Aguiar</h1>
+        <p class="hero__role">Desenvolvedor Back-end / Full Stack</p>
+        <p class="hero__lead">
+          Atuo como desenvolvimento de software, integrações e automações! Gosto de transformar requisitos em soluções
+          simples, seguras e fáceis de evoluir dentro do time.
+        </p>
 
-          <div :class="['command-line', { hidden: !showCmd2 }]">
-            <span class="prompt">visitor@portfolio:~$</span>
-            <span class="typing-text">{{ typedCommand2 }}</span>
-          </div>
-          <div :class="['output', { hidden: !showOutput2 }]">
-            Desenvolvedor Back-end focado em soluções como ERPs, CRMs e integrações entre sistemas e APIs. Transformando ideias
-            em soluções digitais que geram impacto real.
-          </div>
-
-          <div :class="['command-line', { hidden: !showCmdFinal }]">
-            <span class="prompt">visitor@portfolio:~$</span>
-            <span class="cursor" />
-          </div>
+        <div class="hero__actions">
+          <a href="#experience" class="btn btn--primary">Ver experiência</a>
+          <a href="#contact" class="btn btn--text">Falar comigo</a>
         </div>
       </div>
 
-      <div class="hero__actions">
-        <a href="#experience" class="btn btn--primary">Ver meu trabalho →</a>
-        <a href="#contact" class="btn btn--text">Entrar em contato</a>
-      </div>
+      <aside class="hero__panel">
+        <div class="panel__header">
+          <span class="panel__label mono">Resumo</span>
+          <span class="status-pill">
+            <span class="status-dot" />
+            Aberto a oportunidades
+          </span>
+        </div>
 
-      <div class="availability">
-        <div class="status-dot" />
-        // Disponível para novos projetos
-      </div>
+        <ul class="panel__list">
+          <li>
+            <span class="panel__term">Experiência</span>
+            <strong>3+ anos com desenvolvimento de software</strong>
+          </li>
+          <li>
+            <span class="panel__term">Foco</span>
+            <strong>Back-end, integrações e dados</strong>
+          </li>
+          <li>
+            <span class="panel__term">Stack</span>
+            <strong>.NET, Node.js, React, Vue, PostgreSQL</strong>
+          </li>
+        </ul>
+      </aside>
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-const typedCommand1 = ref<string>("");
-const typedCommand2 = ref<string>("");
-const showCmd1 = ref<boolean>(false);
-const showOutput1 = ref<boolean>(false);
-const showCmd2 = ref<boolean>(false);
-const showOutput2 = ref<boolean>(false);
-const showCmdFinal = ref<boolean>(false);
-
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-const typeText = async (text: string, targetRef: any, speed = 100) => {
-  for (let i = 0; i <= text.length; i++) {
-    targetRef.value = text.substring(0, i);
-    await delay(speed);
-  }
-};
-
-const runTerminal = async () => {
-  await delay(500);
-  showCmd1.value = true;
-
-  await delay(200);
-  await typeText("whoami", typedCommand1, 80);
-
-  await delay(300);
-  showOutput1.value = true;
-
-  await delay(1000);
-  showCmd2.value = true;
-
-  await delay(200);
-  await typeText("cat about.txt", typedCommand2, 80);
-
-  await delay(300);
-  showOutput2.value = true;
-
-  await delay(800);
-  showCmdFinal.value = true;
-};
-
-onMounted(() => {
-  runTerminal();
-});
-</script>
-
 <style scoped>
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,115 +55,128 @@ onMounted(() => {
 
 .hero__container {
   display: grid;
-  grid-template-columns: 1fr;
-  max-width: 900px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-2xl);
+  max-width: 1100px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.terminal {
-  background-color: var(--color-surface);
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--color-border);
-  overflow: hidden;
-  margin-bottom: var(--spacing-xl);
-}
-
-.terminal__header {
-  background-color: var(--color-surface-light);
-  padding: 10px 15px;
+.hero__content {
   display: flex;
-  align-items: center;
-  border-bottom: 1px solid var(--color-border);
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
 }
 
-.terminal__controls {
-  display: flex;
-  gap: 8px;
-  margin-right: var(--spacing-md);
-}
-
-.control {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-.control--red {
-  background-color: #ff5f56;
-}
-.control--yellow {
-  background-color: #ffbd2e;
-}
-.control--green {
-  background-color: #27c93f;
-}
-
-.terminal__title {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
   color: var(--color-text-secondary);
-  flex-grow: 1;
-  text-align: center;
 }
 
-.terminal__body {
-  padding: var(--spacing-lg);
-  font-family: var(--font-mono);
-  color: var(--color-text-primary);
-  min-height: 250px;
+.hero__title {
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  margin-bottom: 0;
 }
 
-.command-line {
-  display: flex;
-  margin-bottom: var(--spacing-sm);
-}
-
-.prompt {
+.hero__role {
+  font-size: var(--font-size-xl);
   color: var(--color-primary);
-  margin-right: 10px;
-  flex-shrink: 0;
+  font-weight: 600;
 }
 
-.output {
-  color: var(--color-text-heading);
-  margin-bottom: var(--spacing-md);
-  white-space: pre-wrap;
-}
-
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background-color: var(--color-primary);
-  animation: blink 1s step-end infinite;
-  vertical-align: middle;
+.hero__lead {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  max-width: 520px;
 }
 
 .hero__actions {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+.hero__panel {
+  align-self: center;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: var(--spacing-md);
 }
 
-.availability {
-  display: flex;
+.panel__label {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.status-pill {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-full);
+  background-color: rgba(61, 214, 140, 0.12);
+  color: var(--color-success);
+  font-size: 0.8rem;
   font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background-color: #27c93f;
+  background-color: var(--color-success);
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.7);
-  animation: pulse-green 2s infinite;
+  box-shadow: 0 0 0 0 var(--color-success-soft);
+  animation: pulse-success 2s infinite;
+}
+
+.panel__list {
+  list-style: none;
+  display: grid;
+  gap: var(--spacing-md);
+  padding: 0;
+  margin: 0 0 var(--spacing-lg);
+}
+
+.panel__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel__term {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+}
+
+.panel__list strong {
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+.panel__footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--spacing-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mono);
 }
 
 @media (max-width: 768px) {
@@ -219,29 +184,19 @@ onMounted(() => {
     padding-top: calc(var(--header-height) + var(--spacing-md));
   }
 
-  .terminal__body {
-    padding: var(--spacing-md);
-    font-size: 0.875rem;
-    min-height: 200px;
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
   }
 
-  .terminal__title {
-    font-size: 0.7rem;
-  }
-
-  .output {
-    font-size: 0.875rem;
+  .hero__lead {
+    font-size: var(--font-size-base);
   }
 
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
     gap: var(--spacing-sm);
-  }
-
-  .availability {
-    font-size: 0.875rem;
-    justify-content: center;
   }
 }
 </style>

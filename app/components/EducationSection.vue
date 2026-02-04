@@ -2,7 +2,7 @@
   <section class="section education">
     <div class="container">
       <div class="section__header">
-        <span class="section__number">05.</span>
+        <span class="section__number">04.</span>
         <h2 class="section__title">Formação</h2>
       </div>
 
@@ -50,7 +50,9 @@
 
 .service-card:hover {
   background-color: var(--color-surface-light);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
 }
 
 .service-header {

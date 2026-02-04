@@ -7,70 +7,56 @@
       </div>
 
       <div class="skills__grid">
-        <div class="code-card">
-          <div class="code-card__header">Backend.js</div>
-          <div class="code-block">
-            <span class="code-var">const</span> backend = <span class="code-bracket">[</span><br />
-            &nbsp;&nbsp;<span class="code-string">"Node.js (Nest.js)"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"NET Core / C#"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"TypeScript"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"REST APIs"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Elysia.js (Bun)"</span><br />
-            <span class="code-bracket">]</span>;
-          </div>
+        <div class="skill-group">
+          <h3>Back-end</h3>
+          <ul class="skill-list">
+            <li>.NET Core / C#</li>
+            <li>Node.js (Nest.js)</li>
+            <li>APIs REST</li>
+            <li>Elysia.js (Bun)</li>
+          </ul>
         </div>
 
-        <div class="code-card">
-          <div class="code-card__header">Frontend.js</div>
-          <div class="code-block">
-            <span class="code-var">const</span> frontend = <span class="code-bracket">[</span><br />
-            &nbsp;&nbsp;<span class="code-string">"Vue.js (Nuxt.js)"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"React.js (Next.js)"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"JavaScript ES6+"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Flutter/Dart"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"HTML5/CSS3"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Tailwind CSS"</span><br />
-            <span class="code-bracket">]</span>;
-          </div>
+        <div class="skill-group">
+          <h3>Front-end</h3>
+          <ul class="skill-list">
+            <li>React.js (Next.js)</li>
+            <li>Vue.js (Nuxt.js)</li>
+            <li>JavaScript ES6+</li>
+            <li>HTML/CSS</li>
+            <li>Tailwind CSS</li>
+          </ul>
         </div>
 
-        <div class="code-card">
-          <div class="code-card__header">Database.sql</div>
-          <div class="code-block">
-            <span class="code-var">const</span> databases = <span class="code-bracket">[</span><br />
-            &nbsp;&nbsp;<span class="code-string">"PostgreSQL"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"MySQL"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Sybase"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"MongoDB"</span>,<br />
-            <span class="code-bracket">]</span>;
-          </div>
+        <div class="skill-group">
+          <h3>Dados</h3>
+          <ul class="skill-list">
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>Redis</li>
+          </ul>
         </div>
 
-        <div class="code-card">
-          <div class="code-card__header">DevOps.yml</div>
-          <div class="code-block">
-            <span class="code-var">const</span> devops = <span class="code-bracket">[</span><br />
-            &nbsp;&nbsp;<span class="code-string">"Docker"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Kubernetes"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"CI/CD Pipelines"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"AWS"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Git/GitHub"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Linux"</span><br />
-            &nbsp;&nbsp;<span class="code-string">"Redis"</span><br />
-            <span class="code-bracket">]</span>;
-          </div>
+        <div class="skill-group">
+          <h3>DevOps</h3>
+          <ul class="skill-list">
+            <li>Docker</li>
+            <li>Kubernetes</li>
+            <li>CI/CD Pipelines</li>
+            <li>AWS</li>
+            <li>Git/GitHub</li>
+            <li>Linux</li>
+          </ul>
         </div>
 
-        <div class="code-card">
-          <div class="code-card__header">Expertise.json</div>
-          <div class="code-block">
-            <span class="code-var">const</span> areas = <span class="code-bracket">[</span><br />
-            &nbsp;&nbsp;<span class="code-string">"Sistemas ERP"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Plataformas CRM"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"IA/NLP"</span>,<br />
-            &nbsp;&nbsp;<span class="code-string">"Desenvolvimento de soluções"</span><br />
-            <span class="code-bracket">]</span>;
-          </div>
+        <div class="skill-group">
+          <h3>Domínios</h3>
+          <ul class="skill-list">
+            <li>Sistemas ERP</li>
+            <li>Plataformas CRM</li>
+            <li>IA/NLP</li>
+            <li>Integrações entre sistemas</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -80,8 +66,8 @@
 <style scoped>
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
   width: 100%;
 }
 
@@ -91,42 +77,45 @@
   }
 }
 
-.code-card {
+.skill-group {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
-  padding: var(--spacing-md);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
+  padding: var(--spacing-lg);
   transition: all var(--transition-normal);
 }
 
-.code-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
+.skill-group:hover {
+  transform: translateY(-4px);
   border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
 }
 
-.code-card__header {
-  color: var(--color-text-heading);
+.skill-group h3 {
   margin-bottom: var(--spacing-sm);
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 8px;
-  font-weight: 600;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-lg);
 }
 
-.code-block {
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  font-size: var(--font-size-sm);
 }
 
-.code-var {
-  color: #c792ea;
+.skill-list li {
+  position: relative;
+  padding-left: 18px;
 }
-.code-string {
-  color: #98c379;
-}
-.code-bracket {
-  color: #e06c75;
+
+.skill-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
 }
 </style>

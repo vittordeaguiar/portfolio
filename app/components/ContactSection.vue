@@ -2,15 +2,14 @@
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section__header">
-        <span class="section__number">07.</span>
+        <span class="section__number">06.</span>
         <h2 class="section__title">Vamos Conversar?</h2>
       </div>
 
       <div class="contact__content">
-        <h3 class="contact__subtitle">Tem um projeto em mente?</h3>
+        <h3 class="contact__subtitle">Aberto a oportunidades</h3>
         <p>
-          Vamos transformar sua ideia em realidade. Estou sempre aberto a discutir novos projetos e oportunidades de
-          consultoria.
+          Se você procura alguém com foco em back-end, integrações e qualidade de entrega, vamos conversar!
         </p>
 
         <a href="mailto:vittoraguiar93@gmail.com" class="email-link"> vittoraguiar93@gmail.com </a>

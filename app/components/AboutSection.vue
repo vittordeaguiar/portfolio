@@ -9,25 +9,13 @@
       <div class="about__grid">
         <div class="about__text">
           <p>
-            Sou um <span class="highlight">Desenvolvedor Full Stack</span> com mais de 3 anos de experiência construindo
-            sistemas de gestão empresarial e soluções corporativas de grande escala.
+            Sou um <span class="highlight">desenvolvedor full stack</span> com foco em back-end e mais de 3 anos de
+            experiência desenvolvendo soluções de software.
           </p>
 
           <p>
-            Minha trajetória inclui o desenvolvimento de ERPs utilizados por prefeituras,
-            <span class="highlight">liderança técnica</span> de equipes de desenvolvimento, e criação de soluções com
-            <span class="highlight">Inteligência Artificial</span> para automação de processos comerciais.
-          </p>
-
-          <p>
-            O que me diferencia é a combinação de expertise técnica com visão estratégica de negócio. Não apenas escrevo
-            código — entendo o problema, projeto a solução arquitetural e entrego
-            <span class="highlight">resultados mensuráveis</span>.
-          </p>
-
-          <p>
-            Atualmente atuo como freelancer, ajudando empresas a otimizar processos e escalar operações através de
-            tecnologia bem aplicada.
+            Minha trajetória inclui o desenvolvimento e manutenção de ERPs utilizados por prefeituras, liderança técnica de equipes
+            e criação de soluções com inteligência artificial para automação de processos.
           </p>
         </div>
 
@@ -35,17 +23,12 @@
           <div class="stat-card">
             <span class="stat__value">3+ anos</span>
             <span class="stat__label">Experiência </span>
-            <span class="stat__sub">em desenvolvimento de software</span>
+            <span class="stat__sub">em desenvolvimento de soluções eficazes</span>
           </div>
           <div class="stat-card">
-            <span class="stat__value">Tech Lead</span>
-            <span class="stat__label">Liderança de equipes </span>
-            <span class="stat__sub">Gestão técnica</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat__value">End-to-End</span>
-            <span class="stat__label">Do requisito à deploy </span>
-            <span class="stat__sub">Visão completa do ciclo</span>
+            <span class="stat__value">Arquitetura</span>
+            <span class="stat__label">Integrações e dados </span>
+            <span class="stat__sub">APIs e sistemas</span>
           </div>
         </div>
       </div>

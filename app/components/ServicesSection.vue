@@ -2,41 +2,44 @@
   <section class="section services">
     <div class="container">
       <div class="section__header">
-        <span class="section__number">06.</span>
-        <h2 class="section__title">Como Posso Ajudar</h2>
+        <span class="section__number">05.</span>
+        <h2 class="section__title">Como Contribuo no Time</h2>
       </div>
 
       <div class="services__grid">
         <div class="service-card">
           <div class="service-header">
             <i class="fas fa-layer-group service-icon"></i>
-            <h3>Desenvolvimento de Sistemas</h3>
+            <h3>Arquitetura e APIs</h3>
           </div>
-          <p>ERPs, CRMs e sistemas de gestão customizados para as necessidades específicas do seu negócio.</p>
+          <p>
+            Desenho de serviços, contratos de API, segurança e desempenho com foco em
+            escalabilidade.
+          </p>
         </div>
 
         <div class="service-card">
           <div class="service-header">
             <i class="fas fa-brain service-icon"></i>
-            <h3>Integrações com IA</h3>
+            <h3>Integrações e Dados</h3>
           </div>
-          <p>Automação de processos e otimização comercial utilizando inteligência artificial e NLP.</p>
+          <p>Integração entre sistemas, automações e pipelines de dados para operações críticas.</p>
         </div>
 
         <div class="service-card">
           <div class="service-header">
             <i class="fas fa-code-branch service-icon"></i>
-            <h3>Consultoria Técnica</h3>
+            <h3>Qualidade e DevOps</h3>
           </div>
-          <p>Arquitetura de soluções, code review e mentoria para equipes de desenvolvimento.</p>
+          <p>Boas práticas, CI/CD, testes e observabilidade para manter o time produtivo.</p>
         </div>
 
         <div class="service-card">
           <div class="service-header">
             <i class="fas fa-rocket service-icon"></i>
-            <h3>Liderança de Projetos</h3>
+            <h3>Colaboração</h3>
           </div>
-          <p>Gestão técnica de projetos do requisito à entrega, com foco em resultados mensuráveis.</p>
+          <p>Sou organizado, confiável e proativo. Gosto de assumir responsabilidade e manter o combinado em dia.</p>
         </div>
       </div>
     </div>
@@ -61,7 +64,9 @@
 
 .service-card:hover {
   background-color: var(--color-surface-light);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-glow);
 }
 
 .service-header {

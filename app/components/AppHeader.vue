@@ -78,7 +78,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: rgba(11, 11, 15, 0.8);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all var(--transition-normal);

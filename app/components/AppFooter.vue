@@ -1,9 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <p>Desenvolvido por Vittor de Aguiar</p>
-      <p style="font-size: 0.8rem; opacity: 0.7">Feito com Nuxt.js V4.2.1</p>
-      <p>© 2025</p>
+      <p>Desenvolvido por Vittor de Aguiar © 2026</p>
     </div>
   </footer>
 </template>

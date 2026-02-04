@@ -7,7 +7,6 @@
       <AboutSection />
       <SkillsSection />
       <ExperienceSection />
-      <ResultsSection />
       <EducationSection />
       <ServicesSection />
       <ContactSection />
