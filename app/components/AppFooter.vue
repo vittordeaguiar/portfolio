@@ -1,21 +1,17 @@
 <template>
-  <footer class="footer">
-    <div class="container">
-      <p>Desenvolvido por Vittor de Aguiar © 2026</p>
-    </div>
+  <footer class="footer muted">
+    <p>© {{ year }} Vittor de Aguiar</p>
   </footer>
 </template>
 
+<script setup lang="ts">
+const year = new Date().getFullYear()
+</script>
+
 <style scoped>
 .footer {
-  padding: var(--spacing-lg) 0;
-  text-align: center;
-  color: var(--color-text-secondary);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-}
-
-.footer p {
-  margin-bottom: 8px;
+  border-top: 1px solid var(--rule);
+  padding: 28px 0 40px;
+  font-size: 0.875rem;
 }
 </style>

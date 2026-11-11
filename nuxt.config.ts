@@ -13,32 +13,34 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  fonts: {
+    families: [
+      { name: 'Newsreader', provider: 'google', weights: [400, 500], styles: ['normal', 'italic'] },
+      { name: 'Instrument Sans', provider: 'google', weights: [400, 500, 600] }
+    ]
+  },
+
   app: {
     head: {
-      title: 'Vittor de Aguiar | Desenvolvedor Back-end',
+      title: 'Vittor de Aguiar, desenvolvedor back-end',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Portfolio de Vittor de Aguiar, desenvolvedor back-end/full stack com foco em sistemas corporativos, integrações e arquitetura.'
+          content: 'Vittor de Aguiar, desenvolvedor back-end na TentosCap. Sistemas financeiros, integrações e .NET.'
         }
       ],
-      link: [
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+      script: [
         {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Sora:wght@300;400;500;600;700;800&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+          // Aplica o tema antes da primeira pintura para evitar flash.
+          innerHTML:
+            "(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){}})()",
+          tagPosition: 'head'
         }
       ],
       htmlAttrs: {
-        lang: 'pt-BR',
-        'data-theme': 'dark'
+        lang: 'pt-BR'
       }
     }
   }

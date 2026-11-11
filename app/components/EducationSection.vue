@@ -1,74 +1,31 @@
 <template>
-  <section class="section education">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__number">04.</span>
-        <h2 class="section__title">Formação</h2>
-      </div>
-
-      <div class="education__grid">
-        <div class="service-card">
-          <div class="service-header">
-            <i class="fas fa-graduation-cap service-icon"></i>
-            <h3>Ciência da Computação</h3>
-          </div>
-          <p>Bacharelado (2022 — Em andamento)<br />URI — Campus Santo Ângelo</p>
-        </div>
-        <div class="service-card">
-          <div class="service-header">
-            <i class="fas fa-certificate service-icon"></i>
-            <h3>Técnico em Informática</h3>
-          </div>
-          <p>Manutenção e Suporte (2019 — 2021)<br />Instituto Federal Farroupilha</p>
-        </div>
-      </div>
-    </div>
+  <section class="section">
+    <h2 class="section__label">Formação</h2>
+    <dl class="tools">
+      <dt class="muted">2022 – hoje</dt>
+      <dd>Ciência da Computação, URI Santo Ângelo</dd>
+      <dt class="muted">2019 – 2021</dt>
+      <dd>Técnico em Informática, Instituto Federal Farroupilha</dd>
+    </dl>
   </section>
 </template>
 
 <style scoped>
-.education__grid {
+.tools {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-md);
-  width: 100%;
+  grid-template-columns: 136px 1fr;
+  gap: 10px 24px;
+  font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 768px) {
-  .education__grid {
+@media (max-width: 600px) {
+  .tools {
     grid-template-columns: 1fr;
+    gap: 0;
   }
-}
 
-.service-card {
-  background-color: var(--color-surface);
-  padding: var(--spacing-lg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  transition: all var(--transition-normal);
-}
-
-.service-card:hover {
-  background-color: var(--color-surface-light);
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-glow);
-}
-
-.service-header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-icon {
-  color: var(--color-primary);
-  font-size: 1.5rem;
-}
-
-.service-card h3 {
-  margin: 0;
-  font-size: var(--font-size-lg);
+  .tools dd + dt {
+    margin-top: 14px;
+  }
 }
 </style>

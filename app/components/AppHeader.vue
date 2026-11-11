@@ -1,184 +1,86 @@
 <template>
-  <header id="header" :class="['header', { 'header--scrolled': isScrolled }]">
-    <div class="container header__container">
-      <a href="#" class="header__logo">&lt;VA /&gt;</a>
+  <header class="header">
+    <a href="#top" class="header__name">Vittor de Aguiar</a>
 
-      <button class="hamburger" aria-label="Menu Mobile" @click="toggleMobileMenu">
-        <i class="fas fa-bars"/>
+    <nav class="header__nav" aria-label="Seções">
+      <a href="#trabalho">Trabalho</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+      <button
+        type="button"
+        class="header__theme"
+        :aria-label="theme === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'"
+        @click="toggleTheme"
+      >
+        {{ theme === 'dark' ? 'Claro' : 'Escuro' }}
       </button>
-
-      <ul :class="['nav__list', { active: isMobileMenuOpen }]">
-        <li>
-          <a href="#about" class="nav__link" @click="closeMobileMenu"> <span>01.</span>Sobre </a>
-        </li>
-        <li>
-          <a href="#skills" class="nav__link" @click="closeMobileMenu"> <span>02.</span>Competências </a>
-        </li>
-        <li>
-          <a href="#experience" class="nav__link" @click="closeMobileMenu"> <span>03.</span>Experiência </a>
-        </li>
-        <li>
-          <a href="#contact" class="nav__link" @click="closeMobileMenu"> <span>04.</span>Contato </a>
-        </li>
-        <!-- <li>
-          <a href="#" class="btn btn--primary">Baixar CV</a>
-        </li> -->
-        <li>
-          <button class="theme-toggle" aria-label="Alternar Tema" @click="handleToggleTheme">
-            <i :class="themeIcon"/>
-          </button>
-        </li>
-      </ul>
-    </div>
+    </nav>
   </header>
 </template>
 
 <script setup lang="ts">
-const { theme, toggleTheme } = useTheme();
-const isScrolled = ref<boolean>(false);
-const isMobileMenuOpen = ref<boolean>(false);
-
-const themeIcon = computed(() => {
-  return theme.value === "light" ? "fas fa-moon" : "fas fa-sun";
-});
-
-const handleToggleTheme = () => {
-  toggleTheme();
-};
-
-const toggleMobileMenu = () => {
-  isMobileMenuOpen.value = !isMobileMenuOpen.value;
-};
-
-const closeMobileMenu = () => {
-  isMobileMenuOpen.value = false;
-};
-
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50;
-};
-
-onMounted(() => {
-  if (import.meta.client) {
-    window.addEventListener("scroll", handleScroll);
-  }
-});
-
-onUnmounted(() => {
-  if (import.meta.client) {
-    window.removeEventListener("scroll", handleScroll);
-  }
-});
+const { theme, toggleTheme } = useTheme()
 </script>
 
 <style scoped>
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height);
-  background-color: rgba(11, 11, 15, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  transition: all var(--transition-normal);
-  border-bottom: 1px solid transparent;
-}
-
-[data-theme="light"] .header {
-  background-color: rgba(248, 250, 252, 0.85);
-}
-
-.header--scrolled {
-  height: 70px;
-  box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.header__container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  height: 100%;
+  gap: 16px;
+  padding: 28px 0;
+  font-size: 0.9375rem;
 }
 
-.header__logo {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  z-index: 1002;
+.header__name {
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.nav__list {
+.header__nav {
   display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  list-style: none;
+  align-items: baseline;
+  gap: 20px;
 }
 
-.nav__link {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-primary);
+.header__nav a {
+  color: var(--muted);
+  text-decoration: none;
 }
 
-.nav__link span {
-  color: var(--color-primary);
-  margin-right: 4px;
+.header__nav a:hover {
+  color: var(--text);
 }
 
-.nav__link:hover {
-  color: var(--color-primary);
-}
-
-.theme-toggle {
+.header__theme {
+  font: inherit;
+  color: var(--muted);
   background: none;
-  border: none;
-  color: var(--color-text-primary);
+  border: 0;
+  border-left: 1px solid var(--rule);
+  padding-left: 20px;
   cursor: pointer;
-  font-size: 1.2rem;
-  transition: color var(--transition-fast);
-  margin-left: var(--spacing-sm);
 }
 
-.theme-toggle:hover {
-  color: var(--color-primary);
+.header__theme:hover {
+  color: var(--text);
 }
 
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--color-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1002;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
+@media (max-width: 600px) {
+  .header__name {
+    display: none;
   }
 
-  .nav__list {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 75vw;
-    background-color: var(--color-surface);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    z-index: 1001;
+  .header {
+    justify-content: flex-start;
   }
 
-  .nav__list.active {
-    transform: translateX(0);
+  .header__nav {
+    gap: 16px;
+  }
+
+  .header__theme {
+    padding-left: 16px;
   }
 }
 </style>

@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div class="page">
     <AppHeader />
 
     <main>
       <HeroSection />
+      <ExperienceSection />
       <AboutSection />
       <SkillsSection />
-      <ExperienceSection />
       <EducationSection />
-      <ServicesSection />
       <ContactSection />
     </main>
 
@@ -20,13 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 import { Analytics } from '@vercel/analytics/nuxt'
-const { initTheme } = useTheme();
-const { setupScrollObserver } = useScrollAnimation();
+
+const { initTheme } = useTheme()
 
 onMounted(() => {
-  initTheme();
-  setupScrollObserver();
-});
+  initTheme()
+})
 </script>
