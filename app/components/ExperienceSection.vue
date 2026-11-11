@@ -32,8 +32,9 @@ const jobs: Job[] = [
     role: 'Desenvolvedor Back-end',
     period: 'mar 2026 – hoje',
     text: [
-      'A TentosCap é o banco da 3tentos, onde ficam as operações de empréstimo, crédito e simulações. Trabalho no sistema interno que controla o dia a dia da instituição e em algumas funcionalidades do aplicativo do banco.',
-      'Muito do que faço é integração, tanto com os parceiros que intermediam as transações quanto entre as nossas próprias APIs. Estamos começando a integração com o Banco Central. Quando precisa, ajudo no front-end também.'
+      'A TentosCap é o banco da 3tentos, onde ficam as operações de crédito e empréstimo. Trabalho no sistema interno usado no dia a dia da instituição e em algumas funcionalidades do aplicativo do banco.',
+      'Muito do que faço são integrações e novas funcionalidades internas, pensadas para a empresa produzir mais com a ajuda da tecnologia. Também ajudo no front-end da aplicação.',
+      'À parte, tenho um projeto com a equipe de Marketing: desenvolvo uma aplicação que eles e os assessores usam todos os dias.'
     ],
     stack: ['.NET / C#', 'SQL Server', 'SAP Warehouse', 'Next.js', 'TypeScript']
   },
