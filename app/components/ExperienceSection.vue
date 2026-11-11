@@ -32,8 +32,8 @@ const jobs: Job[] = [
     role: 'Desenvolvedor Back-end',
     period: 'mar 2026 – hoje',
     text: [
-      'A TentosCap é o banco da 3tentos, onde ficam as operações de empréstimo, crédito e simulações. Trabalho no sistema financeiro interno que controla o funcionamento da instituição e em funcionalidades do aplicativo do banco.',
-      'Boa parte do dia a dia são integrações: com os parceiros que intermediam as transações financeiras e entre as APIs internas. O próximo passo é a integração direta com o Banco Central. Quando precisa, também ajudo no front-end.'
+      'A TentosCap é o banco da 3tentos, onde ficam as operações de empréstimo, crédito e simulações. Trabalho no sistema interno que controla o dia a dia da instituição e em algumas funcionalidades do aplicativo do banco.',
+      'Muito do que faço é integração, tanto com os parceiros que intermediam as transações quanto entre as nossas próprias APIs. Estamos começando a integração com o Banco Central. Quando precisa, ajudo no front-end também.'
     ],
     stack: ['.NET / C#', 'SQL Server', 'SAP Warehouse', 'Next.js', 'TypeScript']
   },
@@ -42,16 +42,16 @@ const jobs: Job[] = [
     role: 'Desenvolvedor Full Stack',
     period: '2025 – hoje',
     text: [
-      'Projetos sob demanda para empresas da região, com software feito sob medida para o processo de cada cliente.'
+      'Faço projetos sob demanda para empresas da região. Cada cliente trabalha de um jeito, então o sistema é pensado a partir do processo dele.'
     ],
     stack: ['Node.js', '.NET', 'React', 'PostgreSQL']
   },
   {
     company: 'Pyp System',
-    role: 'Tech Lead',
+    role: 'Desenvolvedor Full Stack',
     period: '2024 – 2025',
     text: [
-      'Liderei o desenvolvimento de produtos com IA para automação de vendas e atendimento, usando processamento de linguagem natural integrado aos canais de comunicação dos clientes.'
+      'Trabalhei em produtos com IA para automatizar vendas e atendimento. A parte de linguagem natural ficava ligada aos canais que os clientes já usavam para falar com o público deles.'
     ],
     stack: ['Node.js', 'Flutter', 'NLP']
   },
@@ -60,7 +60,7 @@ const jobs: Job[] = [
     role: 'Desenvolvedor Full Stack e Tech Lead',
     period: '2023 – 2024',
     text: [
-      'APIs e interfaces para projetos internos, alguns com IA. Liderei um time de três desenvolvedores e um designer: definições técnicas, code review e a adoção de CI/CD.'
+      'Desenvolvi APIs e telas para projetos internos, alguns usando IA. Também coordenei um time de três devs e um designer: ajudava nas decisões técnicas, revisava código e coloquei CI/CD no processo.'
     ],
     stack: ['Node.js', 'Vue', 'Docker', 'CI/CD']
   },
@@ -69,7 +69,7 @@ const jobs: Job[] = [
     role: 'Desenvolvedor Web',
     period: '2022 – 2023',
     text: [
-      'Evolução do Gespam, ERP de gestão pública usado por prefeituras do Rio Grande do Sul. Entreguei funcionalidades e módulos inteiros num sistema com milhares de usuários.'
+      'Trabalhei no Gespam, ERP de gestão pública usado por prefeituras do Rio Grande do Sul. Entreguei funcionalidades novas e alguns módulos inteiros num sistema com milhares de usuários.'
     ],
     stack: ['.NET', 'C#', 'PostgreSQL', 'Sybase']
   }

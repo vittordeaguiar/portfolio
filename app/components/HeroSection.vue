@@ -2,11 +2,10 @@
   <section id="top" class="hero">
     <h1 class="hero__name">Vittor de Aguiar</h1>
     <p class="hero__lead">
-      Sou desenvolvedor back-end na
-      <strong>TentosCap</strong>, a instituição financeira da 3tentos. Trabalho no sistema interno que
-      opera o banco e nas integrações com os parceiros que intermediam as transações.
+      Desenvolvo software desde 2022, quase sempre do lado do servidor: APIs, integrações e os sistemas
+      internos que fazem uma empresa funcionar.
     </p>
-    <p class="hero__meta muted">Antes disso: ERPs para prefeituras, liderança técnica e produtos com IA.</p>
+    <p class="hero__meta muted">Hoje trabalho na TentosCap.</p>
   </section>
 </template>
 
@@ -27,10 +26,6 @@
   font-size: clamp(1.3rem, 3vw, 1.6rem);
   line-height: 1.45;
   max-width: 34ch;
-}
-
-.hero__lead strong {
-  font-weight: 500;
 }
 
 .hero__meta {
