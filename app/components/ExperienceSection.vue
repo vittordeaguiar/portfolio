@@ -58,7 +58,7 @@ const jobs: Job[] = [
   },
   {
     company: 'Growth 8',
-    role: 'Desenvolvedor Full Stack e Tech Lead',
+    role: 'Desenvolvedor Full Stack',
     period: '2023 – 2024',
     text: [
       'Desenvolvi APIs e telas para projetos internos, alguns usando IA. Também coordenei um time de três devs e um designer: ajudava nas decisões técnicas, revisava código e coloquei CI/CD no processo.'
